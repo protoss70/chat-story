@@ -1,0 +1,7 @@
+#bot-chat-input{
+    padding: 10px 10px;
+    font-size:medium;
+    border-radius: 10px;
+    border: none;
+    width: calc(100% - 20px);
+}

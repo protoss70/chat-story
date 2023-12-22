@@ -1,0 +1,14 @@
+.flowstorm-bot{
+    background-color: #5341DA;
+    min-height: 600px;
+    width: 400px;
+    border-radius: 10px;
+    padding: 20px 20px 120px 20px;
+    position: relative;
+}
+
+.input-fields{
+    position: absolute;
+    bottom: 20px;
+    width: calc(100% - 40px);
+}
