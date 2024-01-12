@@ -1,0 +1,39 @@
+.bot-suggestion{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: start;
+    width: 90%;
+    height: 45px;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 0.2rem 0.7rem 0 0.7rem;
+    padding: 3px 0;
+
+    gap: 2px;
+
+    &.list-view{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+        align-items: stretch;
+        height: auto;
+        overflow-x: hidden;
+    }
+}
+
+.suggestion-bubble{
+    height: 100%;
+
+    white-space: nowrap;
+    background-color: #ffffffb3;
+    color: var(--bot-ui-suggestions-text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 0.55rem;
+
+    &:hover{
+        cursor: pointer;
+        background-color: #ffffff80;
+    }
+}

@@ -1,6 +1,6 @@
 import './Bubble.css';
 import PropTypes from 'prop-types';
-import { MessageTypes, MessageSizes } from '../../../../types';
+import { MessageTypes, MessageSizes } from '../../types';
 
 function Bubble({type, text, size}) {
     

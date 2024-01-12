@@ -1,6 +1,7 @@
 export const MessageTypes = {
     bot: "BOT",
-    user: "USER"
+    user: "USER",
+    suggestion: "SUGGESTION"
 }
 
 export const MessageSizes = {

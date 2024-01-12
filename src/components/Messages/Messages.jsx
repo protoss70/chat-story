@@ -1,13 +1,21 @@
 import './Messages.css';
-import Bubble from './components/Bubble/Bubble';
+import Bubble from '../Bubble/Bubble';
+import Suggestions from '../suggestions/suggestions';
 import PropTypes from "prop-types"
+import { MessageTypes } from '../../types';
 
-function Messages({allMessages}) {
+function Messages({bot, allMessages}) {
+
   return (
     <div id='bot-messages-container'>
-        {allMessages.map((message, index) => (
-        <Bubble key={index} {...message} />
-      ))}
+        {allMessages.map((message, index) => {
+          if (message.type === MessageTypes.bot || message.type === MessageTypes.user) {
+            return <Bubble key={index} {...message} />;
+          } else if (message.type === MessageTypes.suggestion) {
+            return <Suggestions key={index} bot={bot} {...message} />;
+          }
+          return null;
+        })}
     </div>
   );
 }
@@ -15,9 +23,7 @@ function Messages({allMessages}) {
 Messages.propTypes = {
     allMessages: PropTypes.arrayOf(
         PropTypes.shape({
-        type: PropTypes.oneOf(['BOT', 'USER']).isRequired,
-        text: PropTypes.string.isRequired,
-        size: PropTypes.oneOf(['sm', 'md', 'lg']),
+        type: PropTypes.oneOf(Object.values(MessageTypes)).isRequired,
         })
   ).isRequired,
 }
